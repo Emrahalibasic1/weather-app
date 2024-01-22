@@ -287,7 +287,7 @@ function getDayName(date){
 function getHour(time) {
     let hour = time.split(":")[0];
     let min = time.split(":")[1];
-    if (hour > 12) {
+    if (hour < 12) {
       hour = hour - 12;
       return `${hour}:${min} PM`;
     } else {
@@ -296,39 +296,44 @@ function getHour(time) {
   }
 //function to update Forecast
 function updateForecast(data, unit, type) {
-  weatherCards.innerHTML = "";
-  let day = 0;
-  let numCards = 0;
-  if(type === "day")
-  {
-    numCards = 24;
-  }
-  else
-  {
-    numCards = 7;
-  }
-  for( let i=0; i < numCards; i++)
-  {
-    let card = document.createElement("div");
-    card.classList.add("card");
-    let dayName = getHour(data[day].datatime);
-    if(type === "week")
-    {
-        dayName =  getDayName(data[day].datatime);
+    weatherCards.innerHTML = "";
+    let day = 0;
+    let numCards = 0;
+    if (type === "day") {
+      numCards = 24;
+    } else {
+      numCards = 7;
     }
-    let dayTemp = data[day].temp;
-    if(unit === "f")
-    {
+    for (let i = 0; i < numCards; i++) {
+      let card = document.createElement("div");
+      card.classList.add("card");
+      let dayName = getHour(data[day].datetime);
+      if (type === "week") {
+        dayName = getDayName(data[day].datetime);
+      }
+      let dayTemp = data[day].temp;
+      if (unit === "f") {
         dayTemp = celciusToFahrenheit(data[day].temp);
-    }
-    let iconCondition = data[day].icon;
-    let iconSrc = getIcon(iconCondition);
-    let tempUnit = "°C";
-    if(unit === "f")
-    {
+      }
+      let iconCondition = data[day].icon;
+      let iconSrc = getIcon(iconCondition);
+      let tempUnit = "°C";
+      if (unit === "f") {
         tempUnit = "°F";
+      }
+      card.innerHTML = `
+                  <h2 class="day-name">${dayName}</h2>
+              <div class="card-icon">
+                <img src="${iconSrc}" class="day-icon" alt="" />
+              </div>
+              <div class="day-temp">
+                <h2 class="temp">${dayTemp}</h2>
+                <span class="temp-unit">${tempUnit}</span>
+              </div>
+    `;
+      weatherCards.appendChild(card);
+      day++;
     }
   }
-
-}
+  
   
