@@ -79,7 +79,7 @@ function getPublicIp(){
     .then((data) =>{
         console.log(data)
         currentCity = data.currentCity;
-     // getWeatherData(data.city , currentUnit , hourlyWeek)
+       getWeatherData(data.city , currentUnit , hourlyWeek)
     });
 }
 
@@ -115,6 +115,8 @@ function getWeatherData(city , unit , hourlyWeek){
        updateHumidityStatus(today.humidity);
        updateVisibiltyStatus(today.visibility);
        updateAirQualityStatus(today.winddir);
+       sunRise.innerText = covertTimeTo12HourFormat(today.sunrise);
+       sunSet.innerText = covertTimeTo12HourFormat(today.sunset);
     })
 }
 
@@ -149,3 +151,96 @@ function measureUvIndex(uvIndex)
            uvText.innerText = "Extreme"
     }
 }
+
+
+function  updateHumidityStatus(humidity){
+    if(humidity <= 30)
+    {
+        humidityStatus.innerText = "Low";
+    }
+    else if(humidity <= 60)
+    {
+        humidityStatus.innerText = "Moderate";
+    }
+    else
+    {
+        humidityStatus.innerText = "Hig";
+    }
+
+}
+
+function updateVisibiltyStatus(visibility)
+{
+    if(visibility <= 0.3)
+    {
+        visibilityStatus.innerText = "Dense Fog";
+    }
+    else if(visibility <= 0.16)
+    {
+        visibilityStatus.innerText = "Moderate Fog";
+    }
+    else if(visibility <= 0.35)
+    {
+        visibilityStatus.innerText = "Light Fog";
+    }
+    else if(visibility <= 1.13)
+    {
+        visibilityStatus.innerText = "Very Light Fog";
+    }  
+    else if(visibility <= 2.16)
+    {
+        visibilityStatus.innerText = "Light Mist";
+    }  
+    else if(visibility <= 5.4)
+    {
+        visibilityStatus.innerText = "Very Light Mis";
+    }
+    else if(visibility <= 10.8)
+    {
+        visibilityStatus.innerText = "Clear Air";
+    }
+    else 
+    {
+        visibilityStatus.innerText = "Very Clear Air";
+    }
+}
+function updateAirQualityStatus(airquality) {
+    if (airquality <= 50) 
+    {
+      airQualityStatus.innerText = "Good👌";
+    } 
+    else if (airquality <= 100) 
+    {
+      airQualityStatus.innerText = "Moderate😐";
+    } 
+    else if (airquality <= 150) 
+    {
+      airQualityStatus.innerText = "Unhealthy for Sensitive Groups😷";
+    } 
+    else if (airquality <= 200) 
+    {
+      airQualityStatus.innerText = "Unhealthy😷";
+    } 
+    else if (airquality <= 250)
+    {
+      airQualityStatus.innerText = "Very Unhealthy😨";
+    }
+     else 
+    {
+      airQualityStatus.innerText = "Hazardous😱";
+    }
+  }
+
+  // convert time to 12 hour format
+function covertTimeTo12HourFormat(time) {
+    let hour = time.split(":")[0];
+    let minute = time.split(":")[1];
+    let ampm = hour >= 12 ? "pm" : "am";
+    hour = hour % 12;
+    hour = hour ? hour : 12; // the hour '0' should be '12'
+    hour = hour < 10 ? "0" + hour : hour;
+    minute = minute < 10 ? "0" + minute : minute;
+    let strTime = hour + ":" + minute + " " + ampm;
+    return strTime;
+  }
+  
