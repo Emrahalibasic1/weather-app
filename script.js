@@ -3,7 +3,7 @@ const temp = document.getElementById("temp"),
 
 // Get the current time
 let currentCity = "";
-let currentUnit = "";
+let currentUnit = "C";
 let hourlyWeek = "Week";
 
 
@@ -63,6 +63,7 @@ function getPublicIp(){
     .then((data) =>{
         console.log(data)
         currentCity = data.currentCity;
+        getWeatherData(data.city , currentUnit , hourlyWeek)
     });
 }
 
@@ -70,3 +71,15 @@ getPublicIp();
 
 //function to get weather data  
  
+function getWeatherData(city , unit , hourlyWeek){
+        const apiKey = "LCEEDT5LGVHWR8V83E7CVVXSY";
+    fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${apiKey}&contentType=json`,
+    {
+        method: "GET",
+    }
+    )
+    .then((Response) => Response.json())
+    .then((data) =>{
+        console.log(data);
+    })
+}
