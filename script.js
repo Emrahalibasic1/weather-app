@@ -4,17 +4,17 @@ const temp = document.getElementById("temp"),
         condition = document.getElementById("condition"),
         rain = document.getElementById("rain"),
         mainIcon = document.getElementById("icon"),
-        uvIndex = document.querySelector("uv-index"),
-        uvText = document.querySelector("uv-index"),
-        windSpeed = document.querySelector("uv-index"),
-        sunRise = document.querySelector("uv-index"),
-        sunSet = document.querySelector("uv-index"),
-        humidtiy = document.querySelector("uv-index"),
-        visibility = document.querySelector("uv-index"),
-        humidityStatus = document.querySelector("uv-index"),
-        airQualitiy = document.querySelector("uv-index"),
-        airQualitiyStatus = document.querySelector("uv-index"),
-        visibilityStatus = document.querySelector("uv-index");
+        uvIndex = document.querySelector(".uv-index"),
+  uvText = document.querySelector(".uv-text"),
+  windSpeed = document.querySelector(".wind-speed"),
+  sunRise = document.querySelector(".sun-rise"),
+  sunSet = document.querySelector(".sun-set"),
+  humidity = document.querySelector(".humidity"),
+  visibilty = document.querySelector(".visibilty"),
+  humidityStatus = document.querySelector(".humidity-status"),
+  airQuality = document.querySelector(".air-quality"),
+  airQualityStatus = document.querySelector(".air-quality-status"),
+  visibilityStatus = document.querySelector(".visibilty-status");
 
 
 // Get the current time
@@ -79,7 +79,7 @@ function getPublicIp(){
     .then((data) =>{
         console.log(data)
         currentCity = data.currentCity;
-       // getWeatherData(data.city , currentUnit , hourlyWeek)
+     //   getWeatherData(data.city , currentUnit , hourlyWeek)
     });
 }
 
@@ -103,9 +103,15 @@ function getWeatherData(city , unit , hourlyWeek){
        else{
         temp.innerText = celciusToFahrenheit(today.temp);
        }
-       currentLocation.innerText = data.resolvedAddres;
+       currentLocation.innerText = data.resolvedAddress;
        condition.innerText = today.conditions;
        rain.innerText = "Perc - " + today.precip + "%";
+       uvIndex.innerText = today.uvindex;
+       windSpeed.innerText = today.windspeed;
+       humidity.innerText = today.humidity + "%";
+       visibilty.innerText = today.visibility;
+       airQuality.innerText = today.winddir;
+       measureUvIndex(today.uvindex);
     })
 }
 
