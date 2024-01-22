@@ -4,7 +4,18 @@ const temp = document.getElementById("temp"),
         condition = document.getElementById("condition"),
         rain = document.getElementById("rain"),
         mainIcon = document.getElementById("icon"),
-        uvIndex = document.querySelector("uv-index")
+        uvIndex = document.querySelector("uv-index"),
+        uvText = document.querySelector("uv-index"),
+        windSpeed = document.querySelector("uv-index"),
+        sunRise = document.querySelector("uv-index"),
+        sunSet = document.querySelector("uv-index"),
+        humidtiy = document.querySelector("uv-index"),
+        visibility = document.querySelector("uv-index"),
+        humidityStatus = document.querySelector("uv-index"),
+        airQualitiy = document.querySelector("uv-index"),
+        airQualitiyStatus = document.querySelector("uv-index"),
+        visibilityStatus = document.querySelector("uv-index");
+
 
 // Get the current time
 let currentCity = "";
@@ -94,6 +105,7 @@ function getWeatherData(city , unit , hourlyWeek){
        }
        currentLocation.innerText = data.resolvedAddres;
        condition.innerText = today.conditions;
+       rain.innerText = "Perc - " + today.precip + "%";
     })
 }
 
