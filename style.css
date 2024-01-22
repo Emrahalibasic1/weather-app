@@ -126,5 +126,50 @@ img {
         font-size: 14px;
         gap: 10px;
         margin-top: 10px;
-        
   }
+
+  .main{
+        width: 100%;
+        min-width: 400px;
+        padding: 20px 40px;
+        position: relative;
+        padding-bottom: 90px;
+        background-color: #f6f6f6;
+  }
+  .main nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav .optiions{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .optiions button{
+        border: none;
+        background: transparent;
+        font-size: 16px;
+        font-weight: 600;
+        color: #495057;
+        cursor: pointer;
+        text-transform: capitalize;
+
+    }
+
+    .optiions button.active{
+        color: #5598fd;
+    }
+    nav .units button{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        color: #1a1a1a;
+        background-color: #fff;
+    }
+
+    .units button.active{
+        color: #fff;
+        background-color: #1a1a1a;
+    }
