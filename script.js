@@ -79,7 +79,7 @@ function getPublicIp(){
     .then((data) =>{
         console.log(data)
         currentCity = data.currentCity;
-     //   getWeatherData(data.city , currentUnit , hourlyWeek)
+     // getWeatherData(data.city , currentUnit , hourlyWeek)
     });
 }
 
@@ -112,6 +112,9 @@ function getWeatherData(city , unit , hourlyWeek){
        visibilty.innerText = today.visibility;
        airQuality.innerText = today.winddir;
        measureUvIndex(today.uvindex);
+       updateHumidityStatus(today.humidity);
+       updateVisibiltyStatus(today.visibility);
+       updateAirQualityStatus(today.winddir);
     })
 }
 
@@ -119,4 +122,30 @@ function getWeatherData(city , unit , hourlyWeek){
 //convert celsius to Fahrenheit
 function celciusToFahrenheit(temp){
     return((temp*9)/5 + 32).toFixed(1);
+}
+
+
+//function to get uv index status
+function measureUvIndex(uvIndex)
+{
+    if(uvIndex <=2)
+    {
+        uvText.innerText = "Low";
+    }
+    else if(uvIndex <=5)
+    {
+           uvText.innerText = "Moderate"
+    }
+    else if(uvIndex <=7)
+    {
+           uvText.innerText = "Hig"
+    }
+    else if(uvIndex <=10)
+    {
+           uvText.innerText = "Very Hig"
+    }
+    else  
+    {
+           uvText.innerText = "Extreme"
+    }
 }
