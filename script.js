@@ -1,9 +1,14 @@
 const temp = document.getElementById("temp"),
-        date = document.getElementById("date-time");
+        date = document.getElementById("date-time"),
+        currentLocation = document.getElementById("location"),
+        condition = document.getElementById("condition"),
+        rain = document.getElementById("rain"),
+        mainIcon = document.getElementById("icon"),
+        uvIndex = document.querySelector("uv-index")
 
 // Get the current time
 let currentCity = "";
-let currentUnit = "C";
+let currentUnit = "c";
 let hourlyWeek = "Week";
 
 
@@ -63,7 +68,7 @@ function getPublicIp(){
     .then((data) =>{
         console.log(data)
         currentCity = data.currentCity;
-        getWeatherData(data.city , currentUnit , hourlyWeek)
+       // getWeatherData(data.city , currentUnit , hourlyWeek)
     });
 }
 
@@ -85,7 +90,15 @@ function getWeatherData(city , unit , hourlyWeek){
         temp.innerText = today.temp;
        }
        else{
-        temp.innerText == celciusToFahrenheit(today.temp);
+        temp.innerText = celciusToFahrenheit(today.temp);
        }
+       currentLocation.innerText = data.resolvedAddres;
+       condition.innerText = today.conditions;
     })
+}
+
+
+//convert celsius to Fahrenheit
+function celciusToFahrenheit(temp){
+    return((temp*9)/5 + 32).toFixed(1);
 }
