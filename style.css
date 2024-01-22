@@ -206,5 +206,47 @@ img {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
 
+    .highlights{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 50px;
+    }
+    .highlights .heading{
+        width: 100%;
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+    .highlights .cardtwo{
+            width: 250px;
+            height: 150px;
+            border-radius: 20px;
+            color: #1a1a1a;
+            background-color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+    }
+
+
+    .cardtwo .card-heading{
+        color: #c2c2c2;
+    }
+
+    .cardtwo .content{
+        margin-top: 20px;
+    }
+
+    .cardtwo .content p:first-child{
+        text-align: center;
+        font-size: 30px;
+    }
+
+     .cardtwo .content p:last-child{
+        font-size: 12px;
+        margin-top: 20px;
+        text-align: left;
     }
