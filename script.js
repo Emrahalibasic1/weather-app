@@ -80,6 +80,12 @@ function getWeatherData(city , unit , hourlyWeek){
     )
     .then((Response) => Response.json())
     .then((data) =>{
-        console.log(data);
+       let today = data.currentConditions;
+       if(unit === "c"){
+        temp.innerText = today.temp;
+       }
+       else{
+        temp.innerText == celciusToFahrenheit(today.temp);
+       }
     })
 }
