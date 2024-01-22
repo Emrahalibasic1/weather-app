@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Weather app</title>
 </head>
 <body>
@@ -13,10 +17,19 @@
             <div>
                 <form action="" class="search" id="search">
                     <input type="text" id="query" placeholder="Search...">
-                    <button>S</button>
+                    <button>
+                        <i class="fas fa-search"></i>
+                    </button>
                 </form>
                 <div class="weather-icon">
                     <img src="icons/sun/26.png" alt="">
+                </div>
+                <div class="temperature">
+                    <h1 id="temp">0</h1>
+                    <span class="temp-unit">°C</span>
+                </div>
+                <div class="date-time">
+                    <p id="date-time">Monday 12:00</p>
                 </div>
             </div>
         </div>
