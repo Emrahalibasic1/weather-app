@@ -264,3 +264,113 @@ img {
   text-align: left;
 }
 
+/* Dodajte @media upite za responzivnost */
+
+/* Za ekrane manje od 600px */
+@media screen and (max-width: 600px) {
+  body {
+    padding: 20px; /* Prilagodite po potrebi */
+  }
+
+  .wrapper {
+    width: 100%; /* Puni širina za male ekrane */
+    min-width: 0; /* Odbacite min-width za male ekrane ako želite */
+  }
+
+  .sidebar {
+    width: 100%; /* Puni širina za male ekrane */
+    min-width: 0; /* Odbacite min-width za male ekrane ako želite */
+  }
+
+  .main {
+    min-width: 0; /* Odbacite min-width za male ekrane ako želite */
+  }
+}
+
+/* Za ekrane između 600px i 900px */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  body {
+    padding: 30px; /* Prilagodite po potrebi */
+  }
+
+  .wrapper {
+    width: 100%; /* Puni širina za srednje ekrane */
+    min-width: 0; /* Odbacite min-width za srednje ekrane ako želite */
+  }
+
+  .sidebar {
+    width: 100%; /* Puni širina za srednje ekrane */
+    min-width: 0; /* Odbacite min-width za srednje ekrane ako želite */
+  }
+
+  .main {
+    min-width: 0; /* Odbacite min-width za srednje ekrane ako želite */
+  }
+}
+
+/* Za ekrane veće od 900px */
+@media screen and (min-width: 901px) {
+  body {
+    padding: 50px; /* Vratite originalni padding za veće ekrane */
+  }
+
+  .wrapper {
+    width: 1200px; /* Vratite originalni width za veće ekrane */
+    min-width: 900px; /* Vratite originalni min-width za veće ekrane */
+  }
+
+  .sidebar {
+    width: 30%; /* Vratite originalni width za veće ekrane */
+    min-width: 250px; /* Vratite originalni min-width za veće ekrane */
+  }
+
+  .main {
+    min-width: 400px; /* Vratite originalni min-width za veće ekrane */
+  }
+}
+/* Dodajte @media upit za responzivnost */
+
+/* Za ekrane manje od 500px */
+@media screen and (max-width: 500px) {
+  body {
+    min-width: auto;
+  }
+  .wrapper {
+    flex-direction: column; /* Preokrenite redoslijed za male ekrane */
+   
+  }
+
+  .search {
+    order: -1; /* Postavite .search da bude prvi element u flex kontejneru */
+    width: 50%;
+  }
+  .sidebar div{
+    width: 100%;
+  }
+  
+  .temperature #temp{
+    font-size: 45px;
+    font-weight: 100;
+    line-height: 1;
+  }
+  .weather-icon #icon{
+    width: 50%;
+  }
+.sidebar div .location-icon{
+  width: 5%;
+}
+  .main {
+    min-width: 0; /* Odbacite min-width za male ekrane ako želite */
+  }
+  .main .cards {
+    flex-direction: column; /* Postavite na column za male ekrane */
+    align-items: center; /* Centrirajte elemente u sredini */
+  }
+  .main #weather-cards {
+    flex-direction: column; /* Postavite na column za male ekrane */
+    align-items: flex-start; /* Postavite elemente na desnu stranu */
+    justify-content: flex-start;
+  }
+}
+
+
