@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
-* {
+* 
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-body {
+body 
+{
   display: flex;
   justify-content: center;
   min-height: 100vh;
@@ -19,17 +21,20 @@ body {
   background-position: center;
   transition: background-image 0.3s ease;
 }
-img {
+img 
+{
   width: 100%;
 }
-.wrapper {
+.wrapper 
+{
   display: flex;
   width: 1200px;
   min-width: 900px;
   border-radius: 20px;
   overflow: hidden;
 }
-.sidebar {
+.sidebar 
+{
   width: 30%;
   min-width: 250px;
   padding: 20px;
@@ -39,7 +44,8 @@ img {
   justify-content: space-between;
 }
 
-.search {
+.search 
+{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,7 +53,8 @@ img {
   margin-top: 20px;
   position: relative;
 }
-.search input {
+.search input 
+{
   width: 100%;
   height: 40px;
   border: 1px solid #ced4da;
@@ -57,11 +64,13 @@ img {
   font-size: 14px;
   color: #495057;
 }
-.search input:focus {
+.search input:focus 
+{
   outline: none;
   border: 1px solid #5598fd;
 }
-.search button {
+.search button 
+{
   min-width: 40px;
   height: 40px;
   border: none;
@@ -72,7 +81,8 @@ img {
   font-size: 14px;
   cursor: pointer;
 }
-.search ul {
+.search ul 
+{
   max-height: 300px;
   overflow-y: auto;
   position: absolute;
@@ -83,72 +93,87 @@ img {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
-.search ul li {
+.search ul li 
+{
   padding: 10px 15px;
   border-bottom: 1px solid #f1f1f1;
   cursor: pointer;
   text-transform: capitalize;
 }
-.search ul li:last-child {
+.search ul li:last-child 
+{
   border-bottom: none;
 }
-.search ul li:hover {
+.search ul li:hover 
+{
   background-color: #f1f1f1;
 }
-.search ul li.active {
+.search ul li.active 
+{
   background-color: #f1f1f1;
 }
-.weather-icon {
+.weather-icon 
+{
   width: 100%;
   height: 150px;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 100px;
 }
-.weather-icon #icon {
+.weather-icon #icon 
+{
   width: 80%;
   object-fit: cover;
 }
-.temperature {
+.temperature 
+{
   display: flex;
 }
-.temperature #temp {
+.temperature #temp 
+{
   font-size: 70px;
   font-weight: 100;
   line-height: 1;
 }
-.temperature span {
+.temperature span 
+{
   font-size: 40px;
   margin-top: -10px;
   display: block;
 }
-.divider {
+.divider 
+{
   width: 100%;
   height: 1px;
   background: #e9ecef;
   margin: 20px 0;
 }
-.condition-rain {
+.condition-rain 
+{
   font-size: 12px;
   text-transform: capitalize;
 }
-.condition-rain div {
+.condition-rain div 
+{
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
 }
-.condition-rain div i {
+.condition-rain div i 
+{
   width: 20px;
 }
-.location {
+.location 
+{
   display: flex;
   align-items: center;
   font-size: 14px;
   gap: 10px;
   margin-top: 10px;
 }
-.main {
+.main 
+{
   width: 100%;
   min-width: 400px;
   padding: 20px 40px;
@@ -157,17 +182,20 @@ img {
   padding-bottom: 90px;
 }
 
-.main nav {
+.main nav 
+{
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.main nav .options {
+.main nav .options 
+{
   display: flex;
   gap: 20px;
   align-items: center;
 }
-.main nav .options button {
+.main nav .options button 
+{
   border: none;
   background: none;
   font-size: 16px;
@@ -176,29 +204,34 @@ img {
   cursor: pointer;
   text-transform: capitalize;
 }
-.main nav .options button.active {
+.main nav .options button.active 
+{
   color: #5598fd;
 }
 
-.main nav .units button {
+.main nav .units button 
+{
   width: 40px;
   height: 40px;
   border-radius: 50%;
   color: #1a1a1a;
   background-color: #fff;
 }
-.main nav .units button.active {
+.main nav .units button.active 
+{
   color: #fff;
   background-color: #1a1a1a;
 }
-.main .cards {
+.main .cards 
+{
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 50px;
 }
 
-.cards .card {
+.cards .card 
+{
   width: 100px;
   height: 130px;
   border-radius: 20px;
@@ -210,34 +243,40 @@ img {
   flex-direction: column;
   justify-content: space-between;
 }
-.card h2 {
+.card h2 
+{
   font-size: 15px;
   font-weight: 600;
 }
-.card .card-icon {
+.card .card-icon 
+{
   width: 50%;
   margin: 0 auto;
 }
-.card .day-temp {
+.card .day-temp 
+{
   font-size: 12px;
   display: flex;
   justify-content: center;
   display: flex;
 }
-.highlights {
+.highlights 
+{
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 50px;
 }
-.highlights .heading {
+.highlights .heading 
+{
   width: 100%;
   font-size: 20px;
   font-weight: 600;
   text-transform: capitalize;
 }
 
-.cardtwo {
+.cardtwo 
+{
   width: 250px;
   height: 150px;
   border-radius: 20px;
@@ -247,130 +286,160 @@ img {
   display: flex;
   flex-direction: column;
 }
-.cardtwo .card-heading {
+.cardtwo .card-heading 
+{
   color: #c2c2c2;
 }
 
-.cardtwo .content {
+.cardtwo .content 
+{
   margin-top: 20px;
 }
-.cardtwo .content p:first-child {
+.cardtwo .content p:first-child 
+{
   text-align: center;
   font-size: 30px;
 }
-.cardtwo .content p:nth-child(2) {
+.cardtwo .content p:nth-child(2) 
+{
   font-size: 12px;
   margin-top: 20px;
   text-align: left;
 }
 
-/* Dodajte @media upite za responzivnost */
+/*RESPONSIVE*/
 
-/* Za ekrane manje od 600px */
-@media screen and (max-width: 600px) {
-  body {
-    padding: 20px; /* Prilagodite po potrebi */
-  }
+/* For screens smaller than 600px */
+@media screen and (max-width: 600px) 
+{
+    body 
+    {
+      padding: 20px; 
+    }
 
-  .wrapper {
-    width: 100%; /* Puni širina za male ekrane */
-    min-width: 0; /* Odbacite min-width za male ekrane ako želite */
-  }
+    .wrapper 
+    {
+      width: 100%; /* Full width for small screens */
+      min-width: 0; 
+    }
 
-  .sidebar {
-    width: 100%; /* Puni širina za male ekrane */
-    min-width: 0; /* Odbacite min-width za male ekrane ako želite */
-  }
+    .sidebar 
+    {
+      width: 100%; /* Full width for small screens */
+      min-width: 0; 
+    }
 
-  .main {
-    min-width: 0; /* Odbacite min-width za male ekrane ako želite */
-  }
+    .main 
+    {
+      min-width: 0; 
+    }
 }
 
-/* Za ekrane između 600px i 900px */
-@media screen and (min-width: 601px) and (max-width: 900px) {
-  body {
-    padding: 30px; /* Prilagodite po potrebi */
-  }
+/* For screens between 600px and 900px */
+@media screen and (min-width: 601px) and (max-width: 900px) 
+{
+    body 
+    {
+      padding: 30px; 
+    }
 
-  .wrapper {
-    width: 100%; /* Puni širina za srednje ekrane */
-    min-width: 0; /* Odbacite min-width za srednje ekrane ako želite */
-  }
+    .wrapper 
+    {
+      width: 100%; /*Full width for medium screens */
+      min-width: 0; 
+    }
 
-  .sidebar {
-    width: 100%; /* Puni širina za srednje ekrane */
-    min-width: 0; /* Odbacite min-width za srednje ekrane ako želite */
-  }
+    .sidebar 
+    {
+      width: 100%; /* Full width for medium screens */
+      min-width: 0; 
+    }
 
-  .main {
-    min-width: 0; /* Odbacite min-width za srednje ekrane ako želite */
-  }
+    .main 
+    {
+      min-width: 0;
+    }
 }
 
-/* Za ekrane veće od 900px */
-@media screen and (min-width: 901px) {
-  body {
-    padding: 50px; /* Vratite originalni padding za veće ekrane */
-  }
+/*For screens larger than 900px */
+@media screen and (min-width: 901px) 
+{
+    body 
+    {
+      padding: 50px; /* Restored original padding for larger screens  */
+    }
 
-  .wrapper {
-    width: 1200px; /* Vratite originalni width za veće ekrane */
-    min-width: 900px; /* Vratite originalni min-width za veće ekrane */
-  }
+    .wrapper 
+    {
+      width: 1200px; /* Restored the original width for larger screens */
+      min-width: 900px; /* Restored the original min-width for larger screens */
+    }
 
-  .sidebar {
-    width: 30%; /* Vratite originalni width za veće ekrane */
-    min-width: 250px; /* Vratite originalni min-width za veće ekrane */
-  }
 
-  .main {
-    min-width: 400px; /* Vratite originalni min-width za veće ekrane */
-  }
+    .sidebar 
+    {
+      width: 30%; /* Restored the original width for larger screens */
+      min-width: 250px; /* Restored the original min-width for larger screens */
+    }
+
+    .main 
+    {
+      min-width: 400px; /* Restored the original min-width for larger screens */
+    }
 }
-/* Dodajte @media upit za responzivnost */
 
-/* Za ekrane manje od 500px */
-@media screen and (max-width: 500px) {
-  body {
-    min-width: auto;
-  }
-  .wrapper {
-    flex-direction: column; /* Preokrenite redoslijed za male ekrane */
-   
-  }
+/* For screens smaller than 500px */
+@media screen and (max-width: 500px) 
+{
+    body 
+    {
+      min-width: auto;
+    }
+    .wrapper 
+    {
+      flex-direction: column; /* Reverse order for small screens */
+    
+    }
 
-  .search {
-    order: -1; /* Postavite .search da bude prvi element u flex kontejneru */
-    width: 50%;
-  }
-  .sidebar div{
-    width: 100%;
-  }
-  
-  .temperature #temp{
-    font-size: 45px;
-    font-weight: 100;
-    line-height: 1;
-  }
-  .weather-icon #icon{
-    width: 50%;
-  }
-.sidebar div .location-icon{
-  width: 5%;
-}
-  .main {
-    min-width: 0; /* Odbacite min-width za male ekrane ako želite */
-  }
-  .main .cards {
-    flex-direction: column; /* Postavite na column za male ekrane */
-    align-items: center; /* Centrirajte elemente u sredini */
-  }
-  .main #weather-cards {
-    flex-direction: column; /* Postavite na column za male ekrane */
-    align-items: flex-start; /* Postavite elemente na desnu stranu */
-    justify-content: flex-start;
-  }
+    .search 
+    {
+      order: -1; /* Set search to be the first element in the flex container  */
+      width: 50%;
+    }
+    .sidebar div
+    {
+      width: 100%;
+    }
+    
+    .temperature #temp
+    {
+      font-size: 45px;
+      font-weight: 100;
+      line-height: 1;
+    }
+    .weather-icon #icon
+    {
+      width: 50%;
+    }
+  .sidebar div .location-icon
+    {
+    width: 5%;
+    }
+    .main 
+    {
+      min-width: 0; 
+    }
+    .main .cards 
+    {
+      flex-direction: column; 
+      align-items: center; /* Centering elements in the middle */
+    }
+    .main #weather-cards 
+    {
+      flex-direction: column; 
+      align-items: flex-start; 
+      justify-content: flex-start;
+    }
 }
 
 
