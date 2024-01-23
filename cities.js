@@ -1,4 +1,4 @@
-const cities =  [
+export default [
   {
     country: "PK",
     name: "Abbottabad",
@@ -2640,4 +2640,4 @@ const cities =  [
     lng: "67.72562",
   },
 ];
-export default cities;
+ 
