@@ -12,4 +12,3 @@ const cities = [
   { country: "RS", name: "Subotica", lat: "46.0990", lng: "19.6628" },
 ];
 
-export default cities;
